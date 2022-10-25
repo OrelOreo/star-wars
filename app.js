@@ -15,7 +15,9 @@ function slideSuivante(){
     
     if (count < (nbImages - 1)){
         count++;
-
+        images[count].classList.add('animDroite')
+        textBloc[count].classList.add('animDroite')
+        
         if(count == (images.length - 1)){
             suivant.classList.remove('active')     
         }
@@ -29,13 +31,16 @@ suivant.addEventListener('click',slideSuivante)
 
 function slidePrecedente(){
     images[count].classList.remove('active');
+    images[count].classList.remove('animDroite')
     textBloc[count].classList.remove('active')
+    textBloc[count].classList.remove('animDroite')
     dates[count].classList.remove('active')
     suivant.classList.add('active')
 
     if (count > 0){
         count--;
-
+        images[count].classList.add('animGauche')
+        textBloc[count].classList.add('animGauche')
         if(count == (images.length = 0)){
             precedent.classList.remove('active')     
         }
