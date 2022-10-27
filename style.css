@@ -68,6 +68,12 @@ body {
 .date.active {
     display: block;
 }
+.date.active.animDroite {
+    animation: apparitionDroite 500ms linear;
+}
+.date.active.animGauche {
+    animation: apparitionGauche 500ms linear;
+}
 
 .date.active span {
     font-size: 12em;
@@ -88,6 +94,26 @@ body {
 }
 .fa-solid.active {
    color: #FFF38A
+}
+
+.container-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.cercle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #333;
+}
+
+.active-cercle {
+    background-color:#FFF38A
 }
 
 @keyframes apparitionDroite {
