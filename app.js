@@ -102,9 +102,18 @@ cercles.forEach(cercle => {
         images[count].classList.add('active');
         textBloc[count].classList.add('active');
         dates[count].classList.add('active');
-        images[count].classList.add('animDroite')
-        textBloc[count].classList.add('animDroite')
-        dates[count].classList.add('animDroite')
+        console.log(count);
 
+        if(count >= cercles.length - 2){            
+            images[count].classList.add('animDroite')
+            textBloc[count].classList.add('animDroite')
+            dates[count].classList.add('animDroite')
+            console.log('toto');
+        } else if(count <= cercles.length - 2){
+            images[count].classList.add('animGauche')
+            textBloc[count].classList.add('animGauche')
+            dates[count].classList.add('animGauche')
+            console.log('tata');
+        }
     })
 })
