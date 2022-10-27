@@ -30,6 +30,14 @@ function slideSuivante(){
     dates[count].classList.add('active')
     textBloc[count].classList.add('active')
     images[count].classList.add('active')
+
+    for(i = 0; i < cercles.length; i++){
+        if(cercles[i].getAttribute('data-clic') - 1 === count){
+            cercles[i].classList.add('active-cercle')
+        } else {
+            cercles[i].classList.remove('active-cercle')
+        }
+    }
 }
 
 suivant.addEventListener('click',slideSuivante)
@@ -54,6 +62,14 @@ function slidePrecedente(){
     dates[count].classList.add('active')
     textBloc[count].classList.add('active')
     images[count].classList.add('active');
+
+    for(i = 0; i < cercles.length; i++){
+        if(cercles[i].getAttribute('data-clic') - 1 === count){
+            cercles[i].classList.add('active-cercle')
+        } else {
+            cercles[i].classList.remove('active-cercle')
+        }
+    }
 }
 
 precedent.addEventListener('click', slidePrecedente);
