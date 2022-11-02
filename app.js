@@ -44,11 +44,11 @@ suivant.addEventListener('click',slideSuivante)
 
 function slidePrecedente(){
     images[count].classList.remove('active');
-    images[count].classList.remove('animDroite')
+    images[count].classList.remove('animGauche')
     textBloc[count].classList.remove('active')
-    textBloc[count].classList.remove('animDroite')
+    textBloc[count].classList.remove('animGauche')
     dates[count].classList.remove('active')
-    dates[count].classList.remove('animDroite')
+    dates[count].classList.remove('animGauche')
     suivant.classList.add('active')
     if (count > 0){
         count--;
@@ -91,29 +91,13 @@ cercles.forEach(cercle => {
             cercles[i].classList.remove('active-cercle');
         }
         this.classList.add('active-cercle');
-
-        images[count].classList.remove('active');
-        textBloc[count].classList.remove('active')
-        dates[count].classList.remove('active');
-        images[count].classList.remove('animDroite')
-        textBloc[count].classList.remove('animDroite')
-        dates[count].classList.remove('animDroite')
-        count = this.getAttribute('data-clic') - 1;
-        images[count].classList.add('active');
-        textBloc[count].classList.add('active');
-        dates[count].classList.add('active');
         console.log(count);
-
-        if(count >= cercles.length - 2){            
-            images[count].classList.add('animDroite')
-            textBloc[count].classList.add('animDroite')
-            dates[count].classList.add('animDroite')
-            console.log('toto');
-        } else if(count <= cercles.length - 2){
-            images[count].classList.add('animGauche')
-            textBloc[count].classList.add('animGauche')
-            dates[count].classList.add('animGauche')
-            console.log('tata');
-        }
+        console.log(this.getAttribute('data-clic'));
+        if(count < this.getAttribute('data-clic')){         
+                slideSuivante();
+            } else {
+                slidePrecedente()
+                console.log(slidePrecedente);
+            }
     })
 })
